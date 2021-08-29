@@ -22,7 +22,8 @@ public class Stringcalculator {
         if (text.equals("")) {
             return 0;
         } else {
-            return toInt(text);
+            String numList[] = seperateNumbers(text, ",");
+            return sum(numList);
         }
     }
 
@@ -30,4 +31,15 @@ public class Stringcalculator {
         return Integer.parseInt(number);
     }
 
+    private static String[] seperateNumbers(String numbers, String divider) {
+        return numbers.split(divider);
+    }
+
+    private static int sum(String[] numbers) {
+        int total = 0;
+        for (String number : numbers) {
+            total += toInt(number);
+        }
+        return total;
+    }
 }
