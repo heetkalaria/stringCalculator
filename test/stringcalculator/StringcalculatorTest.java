@@ -33,9 +33,24 @@ public class StringcalculatorTest {
     public void testNewLines() {
         assertEquals(6, Stringcalculator.add("1\n2,3"));
     }
-    
+
     @Test
-    public void testCustomDelimiter(){
-    	assertEquals(3, Stringcalculator.add("//;\n1;2"));
+    public void testCustomDelimiter() {
+        assertEquals(3, Stringcalculator.add("//;\n1;2"));
+    }
+
+    @Test
+    public void testNegativeNumber() {
+        try {
+            Stringcalculator.add("-1,2");
+        } catch (IllegalArgumentException e) {
+            assertEquals(e.getMessage(), "negatives not allowed: -1");
+        }
+
+        try {
+            Stringcalculator.add("1,-2,3,-4");
+        } catch (IllegalArgumentException e) {
+            assertEquals(e.getMessage(), "negatives not allowed: -2,-4");
+        }
     }
 }

@@ -44,9 +44,22 @@ public class Stringcalculator {
 
     private static int sum(String[] numbers) {
         int total = 0;
+        String negative = "";
         for (String number : numbers) {
+            if (toInt(number) < 0) {
+                if (negative.equals("")) {
+                    negative = number;
+                } else {
+                    negative += ("," + number);
+                }
+            }
             total += toInt(number);
+        }
+
+        if (!negative.equals("")) {
+            throw new IllegalArgumentException("negatives not allowed: " + negative);
         }
         return total;
     }
+
 }
