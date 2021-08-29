@@ -19,4 +19,8 @@ public class StringcalculatorTest {
         assertEquals(0, Stringcalculator.add(""));
     }
 
+    @Test
+    public void testSingleNumber() {
+        assertEquals(1, Stringcalculator.add("1"));
+    }
 }

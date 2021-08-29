@@ -17,8 +17,17 @@ public class Stringcalculator {
     public static void main(String[] args) {
         // TODO code application logic here
     }
-    public static int add(String text){
-        return 0;
+
+    public static int add(String text) {
+        if (text.equals("")) {
+            return 0;
+        } else {
+            return toInt(text);
+        }
     }
-    
+
+    private static int toInt(String number) {
+        return Integer.parseInt(number);
+    }
+
 }
