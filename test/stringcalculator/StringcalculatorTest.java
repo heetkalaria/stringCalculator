@@ -53,4 +53,8 @@ public class StringcalculatorTest {
             assertEquals(e.getMessage(), "negatives not allowed: -2,-4");
         }
     }
+    @Test
+    public void testOverOnekNumber(){
+    	assertEquals(2, Stringcalculator.add("1001,2"));
+    }
 }

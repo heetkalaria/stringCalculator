@@ -53,7 +53,9 @@ public class Stringcalculator {
                     negative += ("," + number);
                 }
             }
-            total += toInt(number);
+            if (toInt(number) < 1001) {
+                total += toInt(number);
+            }
         }
 
         if (!negative.equals("")) {
