@@ -22,10 +22,16 @@ public class Stringcalculator {
         if (text.equals("")) {
             return 0;
         } else {
-            text.replaceAll("\n", ",");
-            String numList[] = seperateNumbers(text, ",");
+            String delimiter = ",";
+            if (text.matches("//(.*)\n(.*)")) {
+                delimiter = Character.toString(text.charAt(2));
+                text = text.substring(4);
+            }
+
+            String numList[] = seperateNumbers(text, delimiter + "|\n");
             return sum(numList);
         }
+
     }
 
     private static int toInt(String number) {
