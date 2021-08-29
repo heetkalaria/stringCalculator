@@ -22,6 +22,7 @@ public class Stringcalculator {
         if (text.equals("")) {
             return 0;
         } else {
+            text.replaceAll("\n", ",");
             String numList[] = seperateNumbers(text, ",");
             return sum(numList);
         }

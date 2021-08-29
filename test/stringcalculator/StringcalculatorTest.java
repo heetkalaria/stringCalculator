@@ -28,4 +28,9 @@ public class StringcalculatorTest {
     public void testTwoNumbers() {
         assertEquals(3, Stringcalculator.add("1,2"));
     }
+
+    @Test
+    public void testNewLines() {
+        assertEquals(6, Stringcalculator.add("1\n2,3"));
+    }
 }
